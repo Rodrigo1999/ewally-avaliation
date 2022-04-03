@@ -25,7 +25,7 @@ module.exports = {
                 const isIDValueOrReference = [6,7].includes(IDValueOrReference)
 
                 if(data.size == 47 || isIDValueOrReference){
-                    if(!isIDValueOrReference) return result.validCheckDigitModuleEleven(field)
+                    if(!field && data.size == 47) return result.validCheckDigitModuleEleven(field)
                     return result.validCheckDigitModuleTen(field)
                 }
 
@@ -64,6 +64,7 @@ module.exports = {
             
                 
                 let checkDigit = divider - (sumDigits % divider)
+                
                 if([0,10,11].includes(checkDigit)) checkDigit = 1
                 if(data.size == 48 && field && [0,1].includes(checkDigit)) checkDigit = 0
 

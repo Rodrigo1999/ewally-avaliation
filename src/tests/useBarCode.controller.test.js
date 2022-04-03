@@ -43,7 +43,7 @@ describe('Unit test by controller of useBarCode to "validFieldOrBar" function', 
         expect(validFieldOrBar(1)).toStrictEqual({ isValid: false, result: 0, checkDigitExpected: 9 })
         expect(validFieldOrBar(2)).toStrictEqual({ isValid: false, result: 5, checkDigitExpected: 7 })
         expect(validFieldOrBar(3)).toStrictEqual({ isValid: false, result: 4, checkDigitExpected: 0 })
-        expect(validFieldOrBar()).toStrictEqual({ isValid: false, result: 6, checkDigitExpected: 4 })
+        expect(validFieldOrBar()).toStrictEqual({ isValid: false, result: 8, checkDigitExpected: 4 })
          
     })
 
