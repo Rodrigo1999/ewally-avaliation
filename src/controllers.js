@@ -24,10 +24,8 @@ module.exports = {
                 const IDValueOrReference = data.barCode[2]
                 const isIDValueOrReference = [6,7].includes(IDValueOrReference)
 
-                if(data.size == 47 || isIDValueOrReference){
-                    if(!field && data.size == 47) return result.validCheckDigitModuleEleven(field)
-                    return result.validCheckDigitModuleTen(field)
-                }
+                if(data.size == 47 && !field) return result.validCheckDigitModuleEleven(field)
+                if(data.size == 47 || isIDValueOrReference) return result.validCheckDigitModuleTen(field)
 
                 return result.validCheckDigitModuleEleven(field)
             },
