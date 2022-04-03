@@ -39,4 +39,3 @@ npm test
 ```
 
 
-# ewally-avaliation
